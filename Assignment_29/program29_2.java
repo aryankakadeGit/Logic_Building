@@ -1,0 +1,38 @@
+import java.util.*;
+
+class Pattern {
+    public void print(int iRow, int iCol) {
+        int i = 0;
+        int j = 0;
+
+        for (i = 1; i <= iRow; i++) {
+            int ino1 = 1;
+            int ino2 = 2;
+            for (j = 1; j <= iCol; j++) 
+            {
+                if (i % 2 != 0) {
+                    System.out.print(ino2 + "\t");
+                    ino2 += 2;
+                } 
+                else {
+                    System.out.print(ino1 + "\t");
+                    ino1 += 2;
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+class program29_2 {
+    public static void main(String[] args) {
+        int iValue1 = 0;
+        int iValue2 = 0;
+        Scanner sobj = new Scanner(System.in);
+        System.out.println("Enter row and column number :\n");
+        iValue1 = sobj.nextInt();
+        iValue2 = sobj.nextInt();
+        Pattern pobj = new Pattern();
+        pobj.print(iValue1, iValue2);
+    }
+}
